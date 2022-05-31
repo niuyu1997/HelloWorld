@@ -1,13 +1,24 @@
-lc232 用栈实现队列 解法 ： 两个栈模拟队列
-lc225 用队列实现栈 解法 ： 两个队列模拟栈
-lc20  有效的括号   解法 ： 用栈
-lc1047 删除字符串中的所有相邻重复项 解法 ： 用栈
-lc150 逆波兰表达式求值 
-	思路：遇到数字入栈；遇到运算符则取出栈顶两个数字进行计算，并将结果压入栈中
-	
-	
-lc144 二叉树的前序遍历 方法： 递归（递归函数，终止条件，单层循环逻辑） 迭代（栈）
-lc145 二叉树的后序遍历
-lc94  二叉树的中序遍历
-lc102 二叉树的层序遍历 方法： 迭代（队列）
-lc226 翻转二叉树       方法： 递归 迭代（栈）
+#include <iostream>
+using namespace std;
+
+void sort(int arr[], int size)
+{
+   int tmp = 0;
+   for(int i = 0; i < size - 1; ++i)
+   {
+   	for(int j = 0; j < size - 1 - i; ++j)
+	{
+	   tmp = arr[j];
+	   arr[j] = arr[j + 1];
+	   arr[j + 1] = tmp;
+	}
+   }
+}
+
+int main()
+{
+   int arr[] = {12, 4, 89, 43, 21, 78};
+   int size = sizeof(arr) / sizeof(arr[0]);
+   sort(arr, size);
+   return 0;
+}
